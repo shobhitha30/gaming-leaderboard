@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Scores</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard/style.css' %}">
+</head>
+<body>
+    <h2>Update Scores</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+    <a href="{% url 'home' %}"><button>Back to Home</button></a>
+</body>
+</html>

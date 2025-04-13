@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ game.name }} Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard/style.css' %}">
+</head>
+<body>
+    <h2>Score X {{ game.name }}</h2>
+    <table border="1">
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+        {% for entry in ranked_scores %}
+        <tr>
+            <td>{{ entry.rank }}</td>
+            <td>{{ entry.player }}</td>
+            <td>{{ entry.score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'leaderboard_home' %}"><button>Back</button></a>
+    <a href="{% url 'home' %}"><button>Back to Home</button></a>
+</body>
+</html>

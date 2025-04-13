@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Player</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard/style.css' %}">
+    
+</head>
+<body>
+    <h2>Add Player</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+    <a href="{% url 'home' %}"><button>Back to Home</button></a>
+</body>
+</html>

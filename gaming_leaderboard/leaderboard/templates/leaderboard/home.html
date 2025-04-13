@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreX</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard/style.css' %}">
+</head>
+<body>
+
+    <!-- 🎮 Hero Section -->
+    <div class="hero">
+        <h1>SCOREX</h1>
+        <p>Track your scores, compete, and rank up in different games!</p>
+        
+        <div class="button-container">
+            <a href="{% url 'add_player' %}" class="btn">Add Player</a>
+            <a href="{% url 'add_game' %}" class="btn">Add Game</a>
+            <a href="{% url 'update_scores' %}" class="btn">Update Scores</a>
+            <a href="{% url 'leaderboard_home' %}" class="btn">Leaderboard</a>
+        </div>
+    </div>
+
+</body>
+</html>

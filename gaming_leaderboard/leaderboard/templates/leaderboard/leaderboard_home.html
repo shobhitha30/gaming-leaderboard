@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Select Game Leaderboard</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'leaderboard/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2> Select a Game Leaderboard </h2>
+        <ul class="game-list">
+            {% for game in games %}
+            <li>
+                <a href="{% url 'game_leaderboard' game.id %}" class="game-link">{{ game.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="button-container">
+            <a href="{% url 'home' %}"><button>Back to Home</button></a>
+        </div>
+    </div>
+</body>
+</html>
